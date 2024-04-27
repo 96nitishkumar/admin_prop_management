@@ -1,0 +1,2 @@
+module FaqBlock::FaqsHelper
+end

@@ -1,0 +1,2 @@
+module BookingBlock::BookingHelper
+end

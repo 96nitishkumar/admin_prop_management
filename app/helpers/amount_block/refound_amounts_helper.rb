@@ -1,0 +1,2 @@
+module AmountBlock::RefoundAmountsHelper
+end

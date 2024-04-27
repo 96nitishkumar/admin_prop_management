@@ -1,0 +1,17 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+
+  	<h1> welcome to property management application </h1>
+    <%=button_to 'login with github', '/auth/github', data: {turbo: false} %>
+    <%= yield %>
+  </body>
+</html>

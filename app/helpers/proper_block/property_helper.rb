@@ -1,0 +1,2 @@
+module ProperBlock::PropertyHelper
+end
