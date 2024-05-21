@@ -5,14 +5,16 @@ module UserBlock
 		has_many :properties, class_name:"PropertyBlock::Property"
 		has_many :bookings, class_name: "BookingBlock::Booking"
 		has_many :refund_amounts, class_name: "AmountBlock::RefundAmount"
+		has_many :addresses, class_name: 'Address'
 		has_secure_password
 		validates :email, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
 		validates :name, presence: true
 		validates :location, presence: true
 		validates :password, presence: true, length: { in: 6..14 }
+		accepts_nested_attributes_for :addresses, reject_if: :all_blank, allow_destroy: true
 
 		def self.ransackable_associations(auth_object = nil)
-    		["bookings", "properties", "refund_amounts"]
+    		["bookings", "properties", "refund_amounts","addresses"]
   		end
 
 	  	def self.ransackable_attributes(auth_object = nil)

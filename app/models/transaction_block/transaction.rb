@@ -9,12 +9,12 @@ module TransactionBlock
 		enum status: ["pending","paid", "unpaid"]
 		after_update :remove_pending_transaction
 
-		def self.ransackable_associations(auth_object = nil)
-    	["booking"]
+	def self.ransackable_associations(auth_object = nil)
+    	["booking", "refund_amounts"]
   	end
 
   	def self.ransackable_attributes(auth_object = nil)
-    	["amount", "booking_id", "created_at", "id", "status", "updated_at"]
+    	["amount", "booking_id", "created_at", "id", "status","payment_id","session_id","card_id", "updated_at"]
   	end
 
   	private 

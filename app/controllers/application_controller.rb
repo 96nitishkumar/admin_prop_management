@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
  require 'jwt_token'
-  skip_forgery_protection  
-  before_action :authenticate_user
+  # skip_forgery_protection  
+  # before_action :authenticate_user
   # Authentication
   def authenticate_user
       token = request.headers['token']

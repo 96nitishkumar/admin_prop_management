@@ -53,4 +53,8 @@ Rails.application.routes.draw do
   end
 
     post '/my/webhook/url', to: 'stripe_webhook#create'
+
+    namespace :address_block do
+        resources :addresses
+    end
 end

@@ -17,6 +17,9 @@ module PropManagementApp
     # in config/environments, which are processed later.
     #
     # config.time_zone = "Central Time (US & Canada)"
+    # config/application.rb
+    # config.i18n.default_locale = :hi
+
     config.eager_load_paths << Rails.root.join("app/services")
   end
 end

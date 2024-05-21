@@ -5,7 +5,7 @@ class AmountBlock::RefundAmount < ApplicationRecord
 	belongs_to :transac, class_name: "TransactionBlock::Transaction", foreign_key: "transaction_id"
 
 	def self.ransackable_associations(auth_object = nil)
-    	["user", "transac"]
+    	["user", "transac", ""]
   end
 
   	def self.ransackable_attributes(auth_object = nil)

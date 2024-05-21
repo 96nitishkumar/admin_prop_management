@@ -6,6 +6,13 @@
 # server "example.com", user: "deploy", roles: %w{app db web}, my_property: :my_value
 # server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
 # server "db.example.com", user: "deploy", roles: %w{db}
+server "192.168.1.43", user: "ubuntu", roles: %w{app db web}
+# set :default_env, path: '/usr/local/ruby-2.5.3/bin:$PATH'
+set :puma_workers, 2
+set :sidekiq_processes, 2
+set :branch, 'master'
+set :stage, :staging
+set :rails_env, :staging
 
 
 

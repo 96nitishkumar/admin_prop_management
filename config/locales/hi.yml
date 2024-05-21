@@ -1,0 +1,11 @@
+hi:
+  activerecord:
+    attributes:
+      address:
+        id: "आईडी"
+        user_id: "उपयोगकर्ता आईडी"
+        latitude: "अक्षांश"
+        longitude: "देशान्तर"
+        full_address: "पूरा पता"
+        created_at: "निर्माण तिथि"
+        updated_at: "अद्यतित तिथि"

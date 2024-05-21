@@ -1,5 +1,5 @@
 ActiveAdmin.register TransactionBlock::Transaction, as: "Transaction" do
-  permit_params :booking_id, :amount, :status
+  permit_params :booking_id, :amount, :status, :payment_id, :card_id, :session_id
 
   index do
     selectable_column
