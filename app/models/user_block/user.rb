@@ -5,7 +5,7 @@ module UserBlock
 		has_many :properties, class_name:"PropertyBlock::Property"
 		has_many :bookings, class_name: "BookingBlock::Booking"
 		has_many :refund_amounts, class_name: "AmountBlock::RefundAmount"
-		has_many :addresses, class_name: 'Address'
+		has_many :addresses
 		has_secure_password
 		validates :email, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
 		validates :name, presence: true

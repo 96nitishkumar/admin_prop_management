@@ -12,15 +12,7 @@
 
 ActiveRecord::Schema[7.0].define(version: 2024_05_20_100049) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "citext"
   enable_extension "plpgsql"
-
-  create_table "accounts", force: :cascade do |t|
-    t.integer "status", default: 1, null: false
-    t.citext "email", null: false
-    t.string "password_hash"
-    t.index ["email"], name: "index_accounts_on_email", unique: true, where: "(status = ANY (ARRAY[1, 2]))"
-  end
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"

@@ -20,18 +20,20 @@ default: &default
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: <%= ENV['POSTGRES_USER'] %>
+  password: <%= ENV['POSTGRES_PASSWORD'] %>
   host: <%= ENV['POSTGRES_HOST'] %>
-  username: <%= ENV['DATABASE_USERNAME'] %>
-  password: <%= ENV['DATABASE_PASSWORD'] %>
+  port: 5432
+
 development:
   <<: *default
-  database: Prop_management_app_development
+  database: admin_prop_management_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user running Rails.
-  #username: Prop_management_app
+  #username: rails_db_connection
 
   # The password associated with the postgres role (username).
   #password:
@@ -59,7 +61,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: Prop_management_app_test
+  database: admin_prop_management_test
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -75,15 +77,14 @@ test:
 # the values provided in this file. Alternatively, you can specify a connection
 # URL environment variable explicitly:
 #
-  production:
-    url: <%= ENV["POSTGRES_URL"] %>
-
+#   production:
+#     url: <%= ENV["MY_APP_DATABASE_URL"] %>
+#
 # Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
 # for a full overview on how database connection configuration can be specified.
 #
 production:
   <<: *default
-  database: Prop_management_app_production
-  host: <%= ENV['POSTGRES_HOST'] %>
-  username: <%= ENV['DATABASE_USERNAME'] %>
-  password: <%= ENV['DATABASE_PASSWORD'] %>
+  database: admin_prop_management_production
+  username: admin_prop_management
+  password: <%= ENV["ADMIN_PROP_MANAGEMENT_DATABASE_PASSWORD"] %>
