@@ -1,4 +1,3 @@
-
 {
   "version": 2,
   "builds": [
@@ -14,7 +13,7 @@
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "public/index.html"
+      "dest": "/"
     }
   ],
   "env": {
