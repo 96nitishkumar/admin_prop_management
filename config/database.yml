@@ -85,6 +85,9 @@ test:
 #
 production:
   <<: *default
+  secret_key_base: <%= ENV['SECRET_KEY_BASE'] %>
   database: admin_prop_management_production
-  username: admin_prop_management
-  password: <%= ENV["ADMIN_PROP_MANAGEMENT_DATABASE_PASSWORD"] %>
+  username: <%= ENV['POSTGRES_USER'] %>
+  password: <%= ENV['POSTGRES_PASSWORD'] %>
+  host: <%= ENV['POSTGRES_HOST'] %>
+  port: 5432

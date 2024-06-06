@@ -1,6 +1,5 @@
 class AddressBlock::AddressesController < ApplicationController
 
-	skip_before_action :authenticate_user
   def create
     @address = Address.new(address_params)
     if @address.save

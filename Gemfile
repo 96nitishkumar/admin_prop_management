@@ -95,7 +95,6 @@ gem 'paypal-sdk-rest'
 
 # gem "rodauth-rails", "~> 1.14"
 # gem "rodauth-omniauth", "~> 0.3.4"
-# gem "omniauth-google-oauth2", "~> 1.1"
 gem 'omniauth-google-oauth2'
 gem 'omniauth-github'
 gem "omniauth-rails_csrf_protection"

@@ -1,7 +1,7 @@
 module TransactionBlock
 	class TransactionsController < ApplicationController
 
-		skip_before_action :authenticate_user, only: [:update_transaction_status]
+		before_action :authenticate_user, except: [:update_transaction_status]
 
 		before_action :set_booking, only: [:create]
 		before_action :set_transaction, only: [:show]

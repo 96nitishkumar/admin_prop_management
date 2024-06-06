@@ -1,5 +1,4 @@
 class StripeWebhookController < ApplicationController
-	skip_before_action :authenticate_user
 
 	def create
 	  payload = request.body.read

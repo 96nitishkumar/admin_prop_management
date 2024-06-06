@@ -1,7 +1,5 @@
 class ApplicationController < ActionController::Base
- require 'jwt_token'
-  # skip_forgery_protection  
-  # before_action :authenticate_user
+ require 'jwt_token' 
   # Authentication
   def authenticate_user
       token = request.headers['token']
@@ -15,12 +13,12 @@ class ApplicationController < ActionController::Base
       end
   end
 
-	rescue_from StandardError, with: :handle_exception
+	# rescue_from StandardError, with: :handle_exception
 	
   private
  
-  def handle_exception(exception)
-    render json: { error: exception.message }, status: :internal_server_error
-  end
+  # def handle_exception(exception)
+  #   render json: { error: exception.message }, status: :internal_server_error
+  # end
 end
 
